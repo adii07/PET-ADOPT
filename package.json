@@ -1,0 +1,20 @@
+{
+  "name": "PET-ADOPT",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adii07/PET-ADOPT.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adii07/PET-ADOPT/issues"
+  },
+  "homepage": "https://github.com/adii07/PET-ADOPT#readme"
+}
