@@ -71,3 +71,10 @@ ReactDOM.render(React.createElement(App), document.getElementById("root"));
 /*
 React Component
 */
+
+/**                                                    JSX
+ * In the current senario React.createElements is never used,this is just done for the sake of explaining how react works internally.
+ * If an element is to be added JSX with used.
+ * Jsx in an Library which interacts with the DOM and manipulates it on behave of react.
+ * const element = <h1>Hello, world!</h1>;-> the jsx way of doing thing directly adding html to the js file.
+ */
