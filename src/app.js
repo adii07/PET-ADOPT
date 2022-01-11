@@ -1,3 +1,6 @@
+/*
+**Case 1
+
 const Pet=()=>{
     return React.createElement(
         "div",
@@ -5,9 +8,32 @@ const Pet=()=>{
         [React.createElement("h2",{},"Jack"),React.createElement("h3",{},"Oscar"),React.createElement("h3",{},"Enzo")]//3 different elements inside the div element
     );
 };
-//Here we have a component pet with an element div and inside that div we have another 3 elements(which is done with the help of array).
-//By this we have created a pet component a stamp that whenever we use(stamp) anywhere, it creates all of what is inscribed within it.
 
+    -Here we have a component pet with an element div and inside that div we have another 3 elements(which is done with the help of array).
+    -By this we have created a pet component a stamp that whenever we use(stamp) anywhere, it creates all of what is inscribed within it.
+*/    
+    
+
+//Case2-Props in react
+const Pet=(props)=>{
+    return React.createElement(
+        "div",
+        {},
+        [
+            React.createElement("h2",{},props.name),
+            React.createElement("h3",{},props.animal),
+            React.createElement("h3",{},props.breed)
+        ]
+        //Adding Multiple elements inside the div element using array.
+    );
+};
+/**
+ * Props are passed on from a parent component to a child component.
+ * Props make a component more flexible by enabling them to ne able to react to properties.
+ * React only supports one way of data-flow, only parent can send data to the child.
+ * The child in react doesn't know who's rendering him.
+ * There's no way for the child to interact with the parent,hence there is no way for the child to send data to the parent component.
+ */
 
 
 /*
@@ -18,9 +44,13 @@ const App = () => {
     return React.createElement(
         "div", {},[
             React.createElement("h1", {}, "Adopt a pet Today!"),
-            React.createElement(Pet),
-            React.createElement(Pet),
-            React.createElement(Pet)
+            /* React.createElement(Pet),
+                -when no props is passed along. Matches with case 1.*/
+
+            //Using props to pass values to the component
+            React.createElement(Pet,{name:'Oscar',animal:'dog',breed:'Golden Retriver'}),
+            React.createElement(Pet,{name:'Lucas',animal:'cat',breed:'Persian'}),
+            React.createElement(Pet,{name:'Enzo',animal:'dog',breed:'Samoyed'}),
         ]
     );
 };
