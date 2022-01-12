@@ -16,24 +16,25 @@ const Pet=()=>{
 /**Importing react */
 import React from "react";
 import ReactDOM from "react-dom";
+import Pet from "./Pet";
 /**
  * Since react is an library, once it is installed using `npm install react@17.0.1 react-dom@17.0.1` they need to be imported to the javascript program.
  * 'npm run dev' to run the react application on local server.
  */
 
 //Case2-Props in react
-const Pet = (props) => {
-  return React.createElement(
-    "div",
-    {},
-    [
-      React.createElement("h2", {}, props.name),
-      React.createElement("h3", {}, props.animal),
-      React.createElement("h3", {}, props.breed),
-    ]
-    //Adding Multiple elements inside the div element using array.
-  );
-};
+// const Pet = (props) => {
+//   return React.createElement(
+//     "div",
+//     {},
+//     [
+//       React.createElement("h2", {}, props.name),
+//       React.createElement("h3", {}, props.animal),
+//       React.createElement("h3", {}, props.breed),
+//     ]
+//     //Adding Multiple elements inside the div element using array.
+//   );
+// };
 /**
  * Props are passed on from a parent component to a child component.
  * Props make a component more flexible by enabling them to ne able to react to properties.
