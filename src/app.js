@@ -1,3 +1,4 @@
+/* global React ReactDOM */
 /*
 **Case 1
 
