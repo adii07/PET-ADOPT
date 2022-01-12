@@ -6,11 +6,19 @@ function updateLocation(e){
 }
 */
 
+//Array of Animals
+const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
+
 const SearchParams=()=>{
     const [location,setLocation]=useState("Delhi");
+    const [animal, updateAnimal] = useState("");//hook to update the animal selected from the animal options
+    const [breed, updateBreed] = useState("");
+    const breeds = [];
+    
     return(
         <div className="search-params">
             <form>
+                
                 <label htmlFor="location">
                     Location
                     <input id="location" value={location} 
@@ -19,6 +27,49 @@ const SearchParams=()=>{
                     // onChange={updateLocation} 
                     placeholder="Location"/>
                 </label>
+
+                {/* DropDown Select option to select the animal */}
+                <label htmlFor="animal">
+                Animal
+                <select
+                    id="animal"
+                    value={animal}
+                    onChange={(e) => updateAnimal(e.target.value)}
+                    onBlur={(e) => updateAnimal(e.target.value)}
+                >
+                    <option />{/*Empty/Blank option for the option */}
+
+                    {/* Maps every element of the array as an option in the select menu. */}
+                    {ANIMALS.map((animal) => (
+                        <option key={animal} value={animal}>
+                            {animal}
+                        </option>
+                    ))}
+
+                </select>
+                </label>
+                {/* DropDown Select option to select the animal */}
+
+                {/* DropDown Select option to select the breed */}
+                <label htmlFor="breed">
+                Breed
+                <select
+                    disabled={!breeds.length}
+                    id="breed"
+                    value={breed}
+                    onChange={(e) => updateBreed(e.target.value)}
+                    onBlur={(e) => updateBreed(e.target.value)}
+                >
+                    <option />
+                    {breeds.map((breed) => (
+                        <option key={breed} value={breed}>
+                            {breed}
+                        </option>
+                    ))}
+                </select>
+                </label>
+                {/* DropDown Select option to select the breed */}
+
                 <button>Submit</button>
             </form>
         </div>
