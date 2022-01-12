@@ -1,20 +1,43 @@
 import React from "react";
 
-const Pet = (props) => {
-    return React.createElement(
-      "div",
-      {},
-      [
-        React.createElement("h2", {}, props.name),
-        React.createElement("h3", {}, props.animal),
-        React.createElement("h3", {}, props.breed),
-      ]
-    );
-  };
+/** React without JSX */
+// const Pet = (props) => {
+//     return React.createElement(
+//       "div",
+//       {},
+//       [
+//         React.createElement("h2", {}, props.name),
+//         React.createElement("h3", {}, props.animal),
+//         React.createElement("h3", {}, props.breed),
+//       ]
+//     );
+//   };
+/** React without JSX */
+
+
+/** React with JSX */
+  const Pet=(props)=>{
+      return(
+          <div>
+              <h2>{props.name}</h2>
+              <h3>{props.animal}</h3>
+              <h3>{props.breed}</h3>
+          </div>
+      );
+  }
 
   export default Pet;//Way of exporting in javascript
 
   /**
    * In react we generally tend to make only one component per file.
    * This is not a strict rule to be followed,i.e, a single file can have more then 1 component as seen in App.js, yet it is advicable to follow this rule. 
+   */
+
+  /**
+   * React with and without JSX, both do the same thing.
+   * JSX just take in the html inside of js and once that code runs throught parcel and babel it turns it into the code without JSX.
+   * Jsx doesn't do very much for us, it just takes in the html and converts it into javascript that the browser can understand .
+   * <div id="whatever"> is equal to React.createElement("h2", {id="whatever"}, props.name),, therefore jsx - decreases the amount of code written
+   *                                                                                                        - make it easy to read code
+   *                                                                                                        - Makes it possible to directly wite html insde js.
    */
