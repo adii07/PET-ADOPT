@@ -14,9 +14,10 @@ const Pet=()=>{
 */
 
 /**Importing react */
-import React from "react";
+// import React from "react";
 import ReactDOM from "react-dom";
 import Pet from "./Pet";
+import SearchParams from "./SearchParams";
 /**
  * Since react is an library, once it is installed using `npm install react@17.0.1 react-dom@17.0.1` they need to be imported to the javascript program.
  * 'npm run dev' to run the react application on local server.
@@ -74,10 +75,8 @@ const App = () => {
   return (
     <div>
       <h1>Adopt Me!</h1>
-      <Pet name="Oscar" animal="dog" breed="Golden Retriver" />
-      <Pet name="Lucas" animal="cat" breed="Persian" />
-      <Pet name="Enzo" animal="dog" breed="Samoyed" />
-    </div>
+      <SearchParams />;
+    </div>  
     // Pet is an example of how created components can be used as elements in JSX
   );
 };
