@@ -46,29 +46,54 @@ import Pet from "./Pet";
 /*
 React Component
 */
+/**Without JSX */
+// const App = () => {
+//   return React.createElement("div", {}, [
+//     React.createElement("h1", {}, "Adopt a pet Today!"),
+//     /* React.createElement(Pet),
+//                 -when no props is passed along. Matches with case 1.*/
 
+//     //Using props to pass values to the component
+//     React.createElement(Pet, {
+//       name: "Oscar",
+//       animal: "dog",
+//       breed: "Golden Retriver",
+//     }),
+//     React.createElement(Pet, {
+//       name: "Lucas",
+//       animal: "cat",
+//       breed: "Persian",
+//     }),
+//     React.createElement(Pet, { name: "Enzo", animal: "dog", breed: "Samoyed" }),
+//   ]);
+// };
+/**Without JSX */
+
+/**With JSX */
 const App = () => {
-  return React.createElement("div", {}, [
-    React.createElement("h1", {}, "Adopt a pet Today!"),
-    /* React.createElement(Pet),
-                -when no props is passed along. Matches with case 1.*/
-
-    //Using props to pass values to the component
-    React.createElement(Pet, {
-      name: "Oscar",
-      animal: "dog",
-      breed: "Golden Retriver",
-    }),
-    React.createElement(Pet, {
-      name: "Lucas",
-      animal: "cat",
-      breed: "Persian",
-    }),
-    React.createElement(Pet, { name: "Enzo", animal: "dog", breed: "Samoyed" }),
-  ]);
+  return (
+    <div>
+      <h1>Adopt Me!</h1>
+      <Pet name="Oscar" animal="dog" breed="Golden Retriver" />
+      <Pet name="Lucas" animal="cat" breed="Persian" />
+      <Pet name="Enzo" animal="dog" breed="Samoyed" />
+    </div>
+    // Pet is an example of how created components can be used as elements in JSX
+  );
 };
+ReactDOM.render(<App/>, document.getElementById("root"));
+//<App/> is a self closing tag just like input
+
+
+/**With JSX */
 //ReactDOM.render(React.createElement(App,{},null));-> here the extra parameters are optional.
-ReactDOM.render(React.createElement(App), document.getElementById("root"));
+/**
+ * Render without JSX
+ * ReactDOM.render(React.createElement(App), document.getElementById("root")); 
+ * 
+ * Render with JSX
+ * ReactDOM.render(<App/>, document.getElementById("root"));
+ * */ 
 //The second part of the statement just tells the reactDOM where to put/place the the App component.
 //Here it was placed  in the root div that we created in our html.
 //{}=> are used to give attributes to the html component that is being created.
