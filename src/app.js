@@ -1,4 +1,3 @@
-/* global React ReactDOM */
 /*
 **Case 1
 
@@ -13,6 +12,14 @@ const Pet=()=>{
     -Here we have a component pet with an element div and inside that div we have another 3 elements(which is done with the help of array).
     -By this we have created a pet component a stamp that whenever we use(stamp) anywhere, it creates all of what is inscribed within it.
 */
+
+/**Importing react */
+import React from "react";
+import ReactDOM from "react-dom";
+/**
+ * Since react is an library, once it is installed using `npm install react@17.0.1 react-dom@17.0.1` they need to be imported to the javascript program.
+ * 'npm run dev' to run the react application on local server.
+ */
 
 //Case2-Props in react
 const Pet = (props) => {
