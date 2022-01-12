@@ -27,3 +27,8 @@ const SearchParams=()=>{
 
 export default SearchParams;
 
+/**
+ * Hooks allow dynamic data binding between DOM and UI.
+ * without useSate and onChange it not possible to enter anything even in the input tag.
+ * This is because react works on triggers,i.e., anytime any change is made it notices the render state and re-renders the whole thing
+ */
