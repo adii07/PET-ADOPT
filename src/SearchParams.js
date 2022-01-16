@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Pet from "./Pet";
-
+import useBreedList from "./useBreedList";
 /*
 function updateLocation(e){
     setLocation(e.target.value);
@@ -14,7 +14,8 @@ const SearchParams=()=>{
     const [location,setLocation]=useState("");
     const [animal, updateAnimal] = useState("");//hook to update the animal selected from the animal options
     const [breed, updateBreed] = useState("");
-    const breeds = [];
+    // const breeds = [];
+    const [breeds] = useBreedList(animal);
 
     const [pets, setPets] = useState([]);// to store the pets in an array
 
