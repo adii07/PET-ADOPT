@@ -16,6 +16,7 @@ const SearchParams=()=>{
     const [breed, updateBreed] = useState("");
     // const breeds = [];
     const [breeds] = useBreedList(animal);
+    const [pets, setPets] = useState([]);
 
     const [pets, setPets] = useState([]);// to store the pets in an array
 
@@ -34,8 +35,12 @@ const SearchParams=()=>{
 
     return(
         <div className="search-params">
-            <form>
-                
+            <form
+                onSubmit={e => {
+                    e.preventDefault();
+                    requestPets();
+                }}
+            >   
                 <label htmlFor="location">
                     Location
                     <input id="location" value={location} 
