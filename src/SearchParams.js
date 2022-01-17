@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Pet from "./Pet";
 import useBreedList from "./useBreedList";
+import Results from "./Results";
 /*
 function updateLocation(e){
     setLocation(e.target.value);
@@ -16,7 +17,6 @@ const SearchParams=()=>{
     const [breed, updateBreed] = useState("");
     // const breeds = [];
     const [breeds] = useBreedList(animal);
-    const [pets, setPets] = useState([]);
 
     const [pets, setPets] = useState([]);// to store the pets in an array
 
@@ -95,11 +95,12 @@ const SearchParams=()=>{
                 <button>Submit</button>
             </form>
 
-            {
+            <Results pets={pets} />;
+            {/* {
                 pets.map((pet) => (
                     <Pet name={pet.name} animal={pet.animal} breed={pet.breed} key={pet.id} />
                 ))
-            }
+            } */}
         </div>
     );
 }   
