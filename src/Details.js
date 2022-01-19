@@ -12,6 +12,7 @@
 import { Component } from "react";
 import { withRouter } from "react-router-dom";
 import Carousel from "./Carousel";
+import ErrorBoundary from "./ErrorBoundary";
 
 class Details extends Component {
 //   constructor() {
@@ -51,4 +52,13 @@ state = { loading: true };//this can be done with the help of babel and eslint,w
   }
 }
 
-export default withRouter(Details);
+// export default withRouter(Details);
+const DetailsWithRouter = withRouter(Details);
+
+export default function DetailsErrorBoundary(props) {
+  return (
+    <ErrorBoundary>
+      <DetailsWithRouter {...props} />
+    </ErrorBoundary>
+  );
+}
