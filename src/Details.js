@@ -11,6 +11,7 @@
 /**Dtails.js as a class component,instead of function component */
 import { Component } from "react";
 import { withRouter } from "react-router-dom";
+import Carousel from "./Carousel";
 
 class Details extends Component {
 //   constructor() {
@@ -34,10 +35,11 @@ state = { loading: true };//this can be done with the help of babel and eslint,w
       return <h2>loading … </h2>;
     }
 
-    const { animal, breed, city, state, description, name } = this.state;
+    const { animal, breed, city, state, description, name, images } = this.state;
 
     return (
       <div className="details">
+          <Carousel images={images} />;
         <div>
           <h1>{name}</h1>
           <h2>{`${animal} — ${breed} — ${city}, ${state}`}</h2>
