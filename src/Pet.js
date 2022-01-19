@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 /** React without JSX */
 // const Pet = (props) => {
 //     return React.createElement(
@@ -37,7 +37,13 @@ const Pet = (props) => {
     }
   
     return (
-      <a href={`/details/${id}`} className="pet">
+      // <a href={`/details/${id}`} className="pet">
+      /**
+       * React link
+       * linking 2 pages/compnents using react router link attribute.
+       * Link works the same anchor tag but where anchor tag refreshes the whole component link only re-render the required/changed component
+       */
+      <Link to={`/details/${id}`} className="pet"> 
         <div className="image-container">
           <img src={hero} alt={name} />
         </div>
@@ -45,7 +51,8 @@ const Pet = (props) => {
           <h1>{name}</h1>
           <h2>{`${animal} — ${breed} — ${location}`}</h2>
         </div>
-      </a>
+        </Link>
+      // </a>
     );
   };
   
