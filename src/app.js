@@ -18,6 +18,8 @@ const Pet=()=>{
 import ReactDOM from "react-dom";
 import Pet from "./Pet";
 import SearchParams from "./SearchParams";
+import { BrowserRouter as Router, Route , Switch } from "react-router-dom";
+import Details from "./Details";
 /**
  * Since react is an library, once it is installed using `npm install react@17.0.1 react-dom@17.0.1` they need to be imported to the javascript program.
  * 'npm run dev' to run the react application on local server.
@@ -73,11 +75,40 @@ React Component
 /**With JSX */
 const App = () => {
   return (
-    <div>
-      <h1>Adopt Me!</h1>
-      <SearchParams />;
-    </div>  
+    // <div>
+    //   <h1>Adopt Me!</h1>
+    //   {/* <SearchParams />; */}
+    //   <Router>
+    //     <Route path="/details/:id">
+    //       <Details />
+    //     </Route>
+    //     <Route path="/">
+    //       <SearchParams />
+    //     </Route>
+    //   </Router>;
+    // </div>  
     // Pet is an example of how created components can be used as elements in JSX
+
+    /**React router with switch */
+    <div>
+      <Router>
+        <h1>Adopt Me!</h1>
+        <Switch>
+          <Route path="/details/:id">
+            <Details />
+          </Route>
+          <Route path="/">
+            <SearchParams />
+          </Route>
+        </Switch>
+      </Router>
+    </div>
+
+    /**
+     * React Router will render all components that the path match.
+     * React Router does partial matches. The URL /teachers/jem/young will match the paths /, /teachers, /teachers/jem and /teachers/jem/young. It will not match /young, /jem/young, or /teachers/young.
+     * To match only one path with a component use Switch.
+     */
   );
 };
 ReactDOM.render(<App/>, document.getElementById("root"));
